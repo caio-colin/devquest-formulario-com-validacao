@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700;1,900&display=swap'); */
-
 body {
   background: url(/src/img/bg-repeat.jpg);
   background-repeat: repeat-x;
@@ -15,19 +13,21 @@ body {
 .conteudo-principal .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 60px;
   width: 100%;
   padding: 25px;
 }
 .container .proposta-desafio {
   width: 100%;
-  max-width: 587px;
-  height: auto;
+  max-width: 550px;
   color: white;
-  line-height: 25px;
+  line-height: 26px;
+  word-wrap: break-word;
+  text-align: justify;
 }
 .container .proposta-desafio .titulo-proposta {
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
   text-transform: uppercase;
   font-weight: 900;
@@ -81,6 +81,9 @@ body {
   height: 100px;
   resize: none;
 }
+.formulario textarea[id="mensagem"].estilo-do-campo + .campo-em-branco{
+  margin-top: -4px;
+}
 .formulario .estilo-do-campo::placeholder {
   color: #a8a8a8;
 }
@@ -110,4 +113,5 @@ body {
   color: #f52e2e;
   font-weight: 400;
   position: absolute;
+  display: block;
 }
