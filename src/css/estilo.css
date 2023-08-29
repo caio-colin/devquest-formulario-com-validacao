@@ -1,0 +1,113 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700;1,900&display=swap'); */
+
+body {
+  background: url(/src/img/bg-repeat.jpg);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  min-height: 100vh;
+}
+.conteudo-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.conteudo-principal .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 25px;
+}
+.container .proposta-desafio {
+  width: 100%;
+  max-width: 587px;
+  height: auto;
+  color: white;
+  line-height: 25px;
+}
+.container .proposta-desafio .titulo-proposta {
+  font-size: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 16px 0px;
+}
+.container .proposta-desafio .subtitulo-proposta {
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 900;
+  font-size: 20px;
+  margin: 16px 0px;
+}
+.container .proposta-desafio .pontos-de-atencao li {
+  list-style-position: inside;
+  padding-left: 15px;
+}
+.container .container-formulario {
+  background-color: white;
+  width: 340px;
+  padding: 20px;
+  margin: auto 0;
+}
+.container .link {
+  text-decoration: none;
+  color: #ccc;
+}
+.container .link:hover {
+  color: #3ccc87;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.formulario .estilo-do-campo {
+  outline: none;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  width: 100%;
+  padding: 9px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+}
+.formulario .estilo-do-campo:focus {
+  background-color: #eeeded;
+}
+.formulario textarea[id="mensagem"].estilo-do-campo {
+  height: 100px;
+  resize: none;
+}
+.formulario .estilo-do-campo::placeholder {
+  color: #a8a8a8;
+}
+.formulario input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #3ccc87;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+}
+.formulario input[type="submit"]:hover {
+  opacity: 0.8;
+}
+.container-formulario .formulario .input-em-branco {
+  border: 1px solid red;
+}
+.container-formulario .formulario .com-valor {
+  border: 1px solid green;
+}
+.campo-em-branco {
+  font-size: 8px;
+  color: #f52e2e;
+  font-weight: 400;
+  position: absolute;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio validação de formulário</title>
+    <link rel="stylesheet" href="/src/css/reset.css" />
+    <link rel="stylesheet" href="/src/css/estilo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main class="conteudo-principal">
+      <div class="container">
+        <section class="proposta-desafio">
+          <h1 class="titulo-proposta">Desafio DevQuest</h1>
+          <a class="link" href="https://drive.google.com/file/d/1jM7DspVoIVbxE4OAeAAslwJn6lUoGMvL/view" target="_blank" rel="noopener noreferrer">https://drive.google.com/file/d/1jM7DspVoIVbxE4OAeAAslwJn6lUoGMvL/view</a>            
+          <h2 class="subtitulo-proposta">Criar um formulário com validação</h1>
+          <a class="link" href="https://www.figma.com/file/zBKnYG9UNdUiIr8ClQTWSG/?node-id=3%3A2" target="_blank" rel="noopener noreferrer">https://www.figma.com/file/zBKnYG9UNdUiIr8ClQTWSG/?node-id=3%3A2</a>
+          <h2 class="subtitulo-proposta">Pontos de atenção:</h1>
+          <ul class="pontos-de-atencao">
+            <li>
+              A validação do formulário deve ser feita com javascript puro.
+            </li>
+            <li>
+              Ao clicar para enviar o formulário, se caso algum campo não
+              estiver preenchido, a borda do input deve ficar vermelha e uma
+              mensagem de "campo obrigatório" deve aparecer embaixo do campo que
+              não foi preenchido, conforme o figma.
+            </li>
+            <li>
+              O fundo do formulário deve ser feito usando a imagem em anexo na
+              aula.
+            </li>
+          </ul>
+          <h2 class="subtitulo-proposta">O que foi feito:</h2>
+          <ul class="pontos-de-atencao">
+            <li>Foi criada uma verificação antes do envio do formulário para verificar se todos os campos estão preenchidos, ou seja, o formulário só é enviado caso todos os campos estejam preenchidos.</li>
+            <li>Foi criada uma validação após o campo ser preenchido, o que deixa o campo com as bordas verdes. Caso as informações preenchidas no campo sejam apagadas, o campo recebe a mensagem "campo obrigatório" e as bordas ficam vermelhas, também acontece o mesmo se clicar no campo não preencher nada e simplesmente remover o foco do mesmo.</li>
+            <li>Foi adicionada uma máscara para telefone utilizando uma biblioteca, mas não foi feito nenhum tipo de validação ou tratamento no campo de email.</li>
+            <li>Não foi criado nenhum modal para ser exibido após o envio do formulário.</li>
+          </ul>
+        </section>
+        <div class="container-formulario">
+          <form id="meuFormulario" class="formulario">
+            <div>
+              <input class="estilo-do-campo" type="text" id="nome" name="nome" placeholder="Nome Completo *" />
+              <p class="campo-em-branco"></p>
+            </div>
+            <div>
+              <input class="estilo-do-campo" type="email" id="email" name="email" placeholder="Email *" />
+              <p class="campo-em-branco"></p>
+            </div>
+            <div>
+              <input class="estilo-do-campo" type="tel" id="telefone" name="telefone" placeholder="Telefone *"/>
+              <p class="campo-em-branco"></p>
+            </div>
+            <div>
+              <textarea class="estilo-do-campo" id="mensagem" name="mensagem" placeholder="Mensagem *" maxlength="150"></textarea>
+              <p class="campo-em-branco"></p>
+            </div>
+            <span>*campos obrigatórios</span>
+            <input type="submit" value="Enviar" />
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="/src/js/validacaoDeCampos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script>
+      $("#telefone").mask("(99) 99999-9999")
+    </script>
+  </body>
+</html>
