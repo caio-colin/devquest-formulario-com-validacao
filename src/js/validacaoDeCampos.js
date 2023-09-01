@@ -15,37 +15,40 @@ function limparMarcas(inputElemento) {
 }
 campos.forEach(function (inputs) {
   inputs.addEventListener("input", function () {
-    if (inputs.value.trim() !== "") {
-      limparMarcas(inputs)
-    } else {
+    if (inputs.value.trim() == "") {
       marcarCampoEmBranco(inputs)
+    } else {
+      limparMarcas(inputs)
     }
   })
 })
 campos.forEach(function (inputs) {
   inputs.addEventListener("blur", function () {
-    if (inputs.value.trim() !== "") {
-      limparMarcas(inputs)
-    } else {
+    if (inputs.value.trim() == "") {
       marcarCampoEmBranco(inputs)
+    } else {
+      limparMarcas(inputs)
     }
   })
 })
 
-formulario.addEventListener("submit", function (event) {
-  event.preventDefault()
+formulario.addEventListener("submit", function (evento) {
+  evento.preventDefault()
   let camposPrenchidos = campos.length - campos.length
   let totalDeCamposDoFormulario = campos.length
 
-  for (let i = campos.length - 1; i >= 0; i--) {
-    if (campos[i].value.trim() !== "") {
-      limparMarcas(campos[i])
-      camposPrenchidos++
+  const camposEmArray = Array.from(campos)
+  camposEmArray.reverse()
+
+  camposEmArray.forEach(function (inputElemento) {
+    if (inputElemento.value.trim() == "") {
+      marcarCampoEmBranco(inputElemento)
+      inputElemento.focus()
     } else {
-      marcarCampoEmBranco(campos[i])
-      campos[i].focus()
+      limparMarcas(inputElemento)
+      camposPrenchidos++
     }
-  }
+  })
 
   if (camposPrenchidos === totalDeCamposDoFormulario) {
     formulario.submit()
