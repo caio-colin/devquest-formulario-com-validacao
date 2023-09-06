@@ -13,22 +13,20 @@ function limparMarcas(inputElemento) {
   const obsDeCampoEmBranco = inputElemento.nextElementSibling
   obsDeCampoEmBranco.textContent = ""
 }
+function gerirCampos(inputElemento) {
+  if (inputElemento.value.trim() == "") {
+    marcarCampoEmBranco(inputElemento)
+  } else {
+    limparMarcas(inputElemento)
+  }
+}
+
 campos.forEach(function (inputs) {
   inputs.addEventListener("input", function () {
-    if (inputs.value.trim() == "") {
-      marcarCampoEmBranco(inputs)
-    } else {
-      limparMarcas(inputs)
-    }
+    gerirCampos(inputs)
   })
-})
-campos.forEach(function (inputs) {
   inputs.addEventListener("blur", function () {
-    if (inputs.value.trim() == "") {
-      marcarCampoEmBranco(inputs)
-    } else {
-      limparMarcas(inputs)
-    }
+    gerirCampos(inputs)
   })
 })
 
