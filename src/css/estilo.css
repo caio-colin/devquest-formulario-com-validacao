@@ -87,7 +87,7 @@ body {
 .formulario .estilo-do-campo::placeholder {
   color: #a8a8a8;
 }
-.formulario input[type="submit"] {
+.formulario button[type="submit"] {
   width: 100%;
   padding: 12px;
   background-color: #3ccc87;
@@ -99,7 +99,7 @@ body {
   cursor: pointer;
   transition: opacity 0.2s ease-in;
 }
-.formulario input[type="submit"]:hover {
+.formulario button[type="submit"]:hover {
   opacity: 0.8;
 }
 .container-formulario .formulario .input-em-branco {
