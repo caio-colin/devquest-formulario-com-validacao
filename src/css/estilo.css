@@ -1,5 +1,5 @@
 body {
-  background: url(/src/img/bg-repeat.jpg);
+  background: url(../img/bg-repeat.jpg);
   background-repeat: repeat-x;
   background-size: auto 100%;
   min-height: 100vh;
@@ -81,7 +81,7 @@ body {
   height: 100px;
   resize: none;
 }
-.formulario textarea[id="mensagem"].estilo-do-campo + .campo-em-branco{
+.formulario textarea[id="mensagem"].estilo-do-campo + .campo-em-branco {
   margin-top: -4px;
 }
 .formulario .estilo-do-campo::placeholder {
